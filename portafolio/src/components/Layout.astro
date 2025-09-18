@@ -1,0 +1,41 @@
+---
+import Header from './Header.astro';
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {title ? `${title} | Desarrollador y Programador Web` : 'Samuel Mendez | Desarrollador y Programador Web'}
+  </title>
+</head>
+<body>
+ <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
+  <Header />
+  <slot />
+</body>
+</html>
+
+<style is:global>
+  :root{
+    color-scheme: dark light;
+  }
+
+  html{
+    font-family: sans-serif;
+  }
+
+  body{
+    font-family: 'Open Sans Variable', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+</style>
