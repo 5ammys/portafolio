@@ -3,6 +3,7 @@ import Layout from '../components/Layout.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import '../styles/global.css';
 import Experience from '../components/Experience.astro';
+import Project from '../components/Project.astro'
 ---
 
 <Layout title="Portafolio | Samuel Mendez ">
@@ -13,8 +14,8 @@ import Experience from '../components/Experience.astro';
 				<h1 class="text-white text-4xl font-bold flex flex-row gap-x-4">
         Hola, soy <span class="text-fuchsia-700">Samuel</span>
 				</h1>
-				<h2 class="text-white opacity-80 text-wrap my-3 w-3/4">
-					Desarrollador Web Full Stack | Apasionado por crear soluciones digitales Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque maxime ipsam voluptatum modi libero, non, qui rem natus, corrupti perspiciatis repellat iure iste? Nulla at, consequatur inventore suscipit vel asperiores.
+				<h2 class="text-zinc-400 text-wrap my-3 w-3/4">
+					Estudiante de <span class="text-cyan-400">Ingeniería en Informática</span> y <span class="text-cyan-400">Desarrollador Web</span> en formación. De <span class="text-amber-500 opacity-70">Buenos Aires, Argentina</span>. Me apasiona transformar ideas en proyectos digitales funcionales, modernos y con impacto.
 				</h2>
 			</div>
 
@@ -34,5 +35,14 @@ import Experience from '../components/Experience.astro';
       </h2>
       <Experience />
     </SectionContainer>
+
+		<SectionContainer>
+			<h2 class="text-white text-2xl justify-center -ml-40 item-center font-bold flex flex-row gap-x-4 pb-6">
+				Proyectos
+			</h2>
+			
+			<Project />
+			
+		</SectionContainer>
   </main>
 </Layout>

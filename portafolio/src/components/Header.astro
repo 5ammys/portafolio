@@ -1,4 +1,26 @@
+---
+import clsx from 'clsx';
+import LinkedinIcon from '../icons/Linkedin.astro';
+import GithubIcon from '../icons/Github.astro';
+import SunIcon from '../icons/Sun.astro';
 
+const link = clsx(
+  'text-slate-300',
+  'hover:text-purple-500',
+  'ease-in-out',
+  'transition',
+  'duration-200'
+);
+
+const icon = clsx(
+  'size-5',
+  'mx-1',
+  'hover:text-cyan-400',
+  'text-slate-400',
+  'ease-in-out',
+  'transition',
+);
+---
 <header class="flex items-center pt-6 w-[1120px] text-base">
   <div class="flex flex-1">
     <img
@@ -8,16 +30,22 @@
     />
     
   </div>
-  <nav class="flex gap-x-6 opacity-95 flex-1 justify-center">
-    <a class="text-slate-300 hover:text-fuchsia-500 ease-in-out transition duration-200" href="#top">Inicio</a>
-    <a class="text-slate-300 hover:text-fuchsia-500 ease-in-out transition duration-200" href="#experience">Experiencia</a>
-    <a class="text-slate-300 hover:text-fuchsia-500 ease-in-out transition duration-200" href="#proyect">Proyectos</a>
-    <a class="text-slate-300 hover:text-fuchsia-500 ease-in-out transition duration-200" href="#contact">Contacto</a>
+  <nav class="flex gap-x-6 opacity-95 flex-1 justify-center ">
+    <a class={link} href="#top">Inicio</a>
+    <a class={link} href="#experience">Experiencia</a>
+    <a class={link} href="#proyect">Proyectos</a>
+    <a class={link} href="#contact">Contacto</a>
   </nav>
-  <nav class="flex gap-x-2 flex-1 justify-end opacity-70">
-    <a href="">Hola</a>
-    <a href="">Hola</a>
-    <a href="">Hola</a>
+  <nav class="flex gap-x-2 flex-1 justify-end">
+    <a href="https://www.linkedin.com/in/sammendez115/" target="_blank" rel="noopener noreferrer">
+      <LinkedinIcon class={icon} />
+    </a>
+    <a href="https://github.com/5ammys" target="_blank" rel="noopener noreferrer">
+      <GithubIcon class={icon} />
+    </a>
+    <!--div>
+      <SunIcon class={icon} /> ACA DEBE IMPLEMENTARSE LA FUNC NIGHT-LIGHT
+    </div-->
   </nav>
 
 </header>

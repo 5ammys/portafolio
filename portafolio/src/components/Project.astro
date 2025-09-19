@@ -1,0 +1,35 @@
+---
+  import ProjectItem from "./ProjectItem.astro";
+
+const PROJECTS = [
+  {
+    title: 'Proyecto 1',
+    description: 'Descripción breve del proyecto 1.',
+    imageUrl: 'https://via.placeholder.com/400x200',
+    projectUrl: '#'
+  },
+  {
+    title: 'Proyecto 2',
+    description: 'Descripción breve del proyecto 2.',
+    imageUrl: 'https://via.placeholder.com/400x200',
+    projectUrl: '#'
+  },
+  {
+    title: 'Proyecto 3',
+    description: 'Descripción breve del proyecto 3.',
+    imageUrl: 'https://via.placeholder.com/400x200',
+    projectUrl: '#'
+  }
+];
+---
+
+<ol>
+  {PROJECTS.map((project) => (
+    <ProjectItem 
+      title={project.title}
+      description={project.description}
+      imageUrl={project.imageUrl}
+      projectUrl={project.projectUrl}
+    />
+  ))}
+</ol>
