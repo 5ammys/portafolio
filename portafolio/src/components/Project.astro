@@ -3,33 +3,65 @@
 
 const PROJECTS = [
   {
-    title: 'Proyecto 1',
+    title: 'Shop E-commerce',
     description: 'Descripción breve del proyecto 1.',
-    imageUrl: 'https://via.placeholder.com/400x200',
-    projectUrl: '#'
+    link: '#',
+    tags: ['JavaScript', 'CSS', 'HTML'],
+    githubUrl: '#',
+    imageUrl: '/Aviones.png',
   },
   {
     title: 'Proyecto 2',
     description: 'Descripción breve del proyecto 2.',
-    imageUrl: 'https://via.placeholder.com/400x200',
-    projectUrl: '#'
+    imageUrl: '/1.jpg',
+    link: '#',
+    githubUrl: '#',
+    tags: ['React', 'Node.js', 'Express'],
   },
   {
     title: 'Proyecto 3',
     description: 'Descripción breve del proyecto 3.',
     imageUrl: 'https://via.placeholder.com/400x200',
-    projectUrl: '#'
+    link: '#',
+    githubUrl: '#',
+    tags: ['Python', 'Django', 'PostgreSQL'],
+  },
+  {
+    title: 'Proyecto 4',
+    description: 'Descripción breve del proyecto 4.',
+    imageUrl: 'https://via.placeholder.com/400x200',
+    link: '#',
+    githubUrl: '#',
+    tags: ['Vue.js', 'Firebase', 'Tailwind CSS'],
+  },
+  {
+    title: 'Proyecto 5',
+    description: 'Descripción breve del proyecto 5.',
+    imageUrl: 'https://via.placeholder.com/400x200',
+    link: '#',
+    githubUrl: '#',
+    tags: ['Angular', 'TypeScript', 'Sass'],
+  },
+  {
+    title: 'Proyecto 6',
+    description: 'Descripción breve del proyecto 6.',
+    imageUrl: 'https://via.placeholder.com/400x200',
+    link: '#',
+    githubUrl: '#',
+    tags: ['Ruby on Rails', 'SQLite', 'Bootstrap'],
   }
 ];
 ---
 
-<ol>
+<ol class="grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-3 pb-12"> 
   {PROJECTS.map((project) => (
-    <ProjectItem 
+    <ProjectItem
       title={project.title}
       description={project.description}
       imageUrl={project.imageUrl}
-      projectUrl={project.projectUrl}
+      link={project.link}
+      githubUrl={project.githubUrl}
+      tags={project.tags} 
     />
   ))}
 </ol>

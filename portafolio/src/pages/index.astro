@@ -9,7 +9,7 @@ import Project from '../components/Project.astro'
 <Layout title="Portafolio | Samuel Mendez ">
   <main>
     <!-- Hero ocupa toda la pantalla -->
-    <SectionContainer class="h-screen flex flex-col justify-center">
+    <SectionContainer class="h-screen flex flex-col justify-center sm:ml-10 lg:ml-40">
       <div class="-mt-20">
 				<h1 class="text-white text-4xl font-bold flex flex-row gap-x-4">
         Hola, soy <span class="text-fuchsia-700">Samuel</span>
@@ -29,20 +29,27 @@ import Project from '../components/Project.astro'
 		</SectionContainer>
 
     <!-- Aparece solo al hacer scroll -->
-    <SectionContainer id="experience" class="pb-3">
+    <SectionContainer id="experience" class="pb-3 lg:ml-40">
       <h2 class="text-white text-2xl font-bold flex flex-row gap-x-4 pb-6">
         Experiencia
       </h2>
       <Experience />
     </SectionContainer>
 
-		<SectionContainer>
-			<h2 class="text-white text-2xl justify-center -ml-40 item-center font-bold flex flex-row gap-x-4 pb-6">
+		<SectionContainer id="proyect" class="py-11 mx-auto flex flex-col justify-center items-center">
+			<h2 class="text-white text-2xl font-bold gap-x-4 pb-8">
 				Proyectos
 			</h2>
-			
 			<Project />
-			
+		</SectionContainer >
+
+		<SectionContainer id="contact" class="pb-3 lg:ml-40">
+			<h2 class="text-white text-2xl font-bold flex flex-row gap-x-4 pb-6">
+				Contacto
+			</h2>
+			<p class="text-zinc-400 text-wrap my-3 w-3/4">
+				Estoy abierto a nuevas oportunidades y colaboraciones. Si tienes un proyecto en mente o simplemente quieres saludar, no dudes en contactarme. Puedes enviarme un correo electrónico a <span class="text-cyan-400">
+			</p>
 		</SectionContainer>
   </main>
 </Layout>
