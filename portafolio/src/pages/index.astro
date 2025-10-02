@@ -3,15 +3,13 @@ import Layout from '../components/Layout.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import '../styles/global.css';
 import Experience from '../components/Experience.astro';
-import Project from '../components/Project.astro'
-import Footer from '../components/Footer.astro';
+import Project from '../components/Project.astro';
 ---
 
-<Layout title="Portafolio | Samuel Mendez ">
-  <main>
-    <!-- Hero ocupa toda la pantalla -->
+<Layout title="Portafolio | Samuel Mendez">
+  <main class="top-20">
     <SectionContainer class="h-screen flex flex-col justify-center sm:ml-10 lg:ml-40">
-      <div class="-mt-20">
+      <div class="">
 				<h1 class="text-white text-4xl font-bold flex flex-row gap-x-4">
         Hola, soy <span class="text-fuchsia-700">Samuel</span>
 				</h1>
@@ -29,18 +27,29 @@ import Footer from '../components/Footer.astro';
 		</SectionContainer>
 
     <SectionContainer id="experience" class="pb-3 lg:ml-40">
-      <h2 class="text-white text-2xl font-bold flex flex-row gap-x-4 pb-6">
+      <h2 class="text-white text-2xl font-bold flex-row gap-x-4 pb-6">
         Experiencia
       </h2>
       <Experience />
     </SectionContainer>
 
-		<SectionContainer id="proyect" class="py-11 mx-auto flex flex-col justify-center items-center">
+		<SectionContainer id="proyect" class="py-11 mx-auto justify-center items-center">
 			<h2 class="text-white text-2xl font-bold gap-x-4 pb-8">
 				Proyectos
 			</h2>
 			<Project />
 		</SectionContainer >
+
+		<SectionContainer id="about" class="pb-11 mx-auto flex flex-coljustify-center items-center">
+			<h2 class="text-white text-2xl font-bold gap-x-4 pb-8">
+				Sobre mi
+			</h2>
+
+			<div class="grid grid-cols-2">
+				
+			</div>
+
+		</SectionContainer>
 
   </main>
 </Layout>

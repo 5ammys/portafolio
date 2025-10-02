@@ -12,9 +12,9 @@ interface Props {
 
 const { title, description, imageUrl, link, githubUrl, tags } = Astro.props as Props;
 ---
-<div class="max-w-md h-full flex flex-col bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-slate-900 dark:border-gray-700 transform transition-transform duration-300 hover:scale-105">
+<div class="max-w-sm h-full flex flex-col bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-slate-900 dark:border-gray-700 transform transition-transform duration-300 hover:scale-105">
   <a href={githubUrl}>
-    <img class="rounded-t-lg py-3 px-2 h-[160px] object-cover w-full" src={imageUrl} alt="" />
+    <img class="rounded-t-lg py-3 px-2 sm:h-[320px] lg:h-[160px] object-cover w-full" src={imageUrl} alt="" />
   </a>
   <div class="p-5 flex flex-col flex-grow justify-between">
     <div>

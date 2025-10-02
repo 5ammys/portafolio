@@ -9,10 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.3.1",
+    "@astrojs/react": "4.4.0",
     "@fontsource-variable/montserrat": "^5.2.8",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.13.7",
+    "astro": "5.14.1",
     "clsx": "^2.1.1",
     "tailwindcss": "^4.1.13"
   }

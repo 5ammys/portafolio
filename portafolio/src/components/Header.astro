@@ -2,6 +2,7 @@
 import clsx from 'clsx';
 import LinkedinIcon from '../icons/Linkedin.astro';
 import GithubIcon from '../icons/Github.astro';
+
 import SunIcon from '../icons/Sun.astro';
 
 const link = clsx(
@@ -9,7 +10,8 @@ const link = clsx(
   'hover:text-purple-500',
   'ease-in-out',
   'transition',
-  'duration-200'
+  'duration-200',
+  'whitespace-nowrap'
 );
 
 const icon = clsx(
@@ -21,8 +23,8 @@ const icon = clsx(
   'transition',
 );
 ---
-<header class="flex fixed top-0 bg-gray-950/90 [mask-image:linear-gradient(to_bottom,black_86%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] z-10 backdrop-blur-md items-center pt-6 w-[1120px] text-base">
-  <div class="flex flex-1">
+<header class="flex fixed top-0 bg-gray-950/90 w-full [mask-image:linear-gradient(to_bottom,black_86%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] z-10 backdrop-blur-md items-center py-4 text-base">
+  <div class="flex flex-1 ml-20">
     <img
       class="rounded-full h-12 w-12"
       src="/me.png"
@@ -34,9 +36,10 @@ const icon = clsx(
     <a class={link} href="#top">Inicio</a>
     <a class={link} href="#experience">Experiencia</a>
     <a class={link} href="#proyect">Proyectos</a>
+    <a class={link} href="#about">Sobre mi</a>
     <a class={link} href="#contact">Contacto</a>
   </nav>
-  <nav class="flex gap-x-2 flex-1 justify-end">
+  <nav class="flex gap-x-2 flex-1 justify-end mr-20">
     <a href="https://www.linkedin.com/in/sammendez115/" target="_blank" rel="noopener noreferrer">
       <LinkedinIcon class={icon} />
     </a>
