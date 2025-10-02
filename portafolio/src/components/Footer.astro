@@ -1,4 +1,8 @@
 ---
+import Github from '../icons/Github.astro';
+import Linkedin from '../icons/Linkedin.astro';
+import WhatsApp from '../icons/WhatsApp.astro';
+
 interface Props {
   title?: string;
   id: string;
@@ -9,41 +13,66 @@ const { title = "Contacto", id } = Astro.props;
 
 <section id={id} class="w-full bg-gray-900 text-gray-200 pt-10 pb-20">
   <h2 class="text-2xl font-bold mb-10 text-center">{title}</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 px-6 md:px-16">
 
-    <div>Hola</div>
+    <!-- Columna izquierda -->
+    <div>
+      <p>
+        Puedes escribirme directamente a mi correo electrónico, enviarme un mensaje a mi número de teléfono 
+        o completar el formulario de contacto. Estaré encantado de responder a tus consultas lo antes posible.
+      </p>
 
+      <!-- Botones de acción -->
+      <h3 class="my-5">Mis redes:</h3>
+
+      <div class="ml-4 flex gap-3">
+        <a href="https://linkedin.com/in/tuusuario" target="_blank" 
+           class="px-5 py-2 rounded-full flex flex-row text-sm bg-sky-500 hover:bg-sky-600 transition">
+           <Linkedin class="size-4 mx-1" /> LinkedIn
+        </a>
+        <a href="https://github.com/tuusuario" target="_blank" 
+           class="px-5 py-2 rounded-full flex flex-row text-sm bg-gray-700 hover:bg-gray-800 transition">
+           <Github class="size-4 mx-1" /> GitHub
+        </a>
+        <a href="https://wa.me/5491164561145" target="_blank" 
+           class="px-5 py-2 rounded-full flex flex-row whitespace-nowrap text-sm bg-emerald-600 hover:bg-emerald-700 transition">
+           <WhatsApp class="size-4 mx-1" /> WhatsApp
+        </a>
+      </div>
+
+      <div class="mt-8 space-y-2">
+        <h3>Correo:</h3>
+        <p class="ml-4 text-purple-600 hover:underline">samue0465@gmail.com</p>
+      </div>
+    </div>
+
+    <!-- Columna derecha (formulario) -->
     <form
+      id="form"
       action="https://formspree.io/f/xpwywrov"
       method="POST"
-      class="mr-30 ml-5 flex flex-col"
+      class="flex flex-col"
     >
-      <span>
-
-      </span>
-
-      <!-- Inputs a la izquierda -->
       <div class="flex flex-col gap-4">
         <input
           type="text"
           name="nombre"
           placeholder="Tu nombre"
-          class="p-2 rounded-md w-full text-gray-200 border-gray-600 focus:ease-in transform border-2"
+          class="p-3 rounded-md w-full text-gray-200 border-gray-600 focus:ring-2 focus:ring-fuchsia-700 border-2 bg-gray-800"
           required
         />
         <input
           type="email"
           name="email"
           placeholder="Tu email"
-          class="p-2 rounded-md w-full text-gray-200 border-gray-600 border-2"
+          class="p-3 rounded-md w-full text-gray-200 border-gray-600 focus:ring-2 focus:ring-fuchsia-700 border-2 bg-gray-800"
           required
         />
-
         <textarea
           name="mensaje"
           rows="5"
           placeholder="Tu mensaje"
-          class="p-2 rounded-md w-full h-full text-gray-200 border-gray-600 border-2 resize-none"
+          class="p-3 rounded-md w-full h-full text-gray-200 border-gray-600 border-2 bg-gray-800 resize-none focus:ring-2 focus:ring-fuchsia-700"
           required
         />
       </div>
@@ -51,7 +80,7 @@ const { title = "Contacto", id } = Astro.props;
       <div class="mt-6 flex justify-center">
         <button
           type="submit"
-          class="bg-fuchsia-800 cursor-pointer hover:bg-fuchsia-900 ease-in transition text-white py-3 px-8 rounded-md w-full md:w-1/2 text-center font-semibold"
+          class="bg-fuchsia-800 cursor-pointer hover:bg-fuchsia-900 transition text-white py-3 px-8 rounded-md w-full md:w-1/2 font-semibold"
         >
           Enviar
         </button>
@@ -59,6 +88,4 @@ const { title = "Contacto", id } = Astro.props;
     </form>
 
   </div>
-
-  
 </section>
