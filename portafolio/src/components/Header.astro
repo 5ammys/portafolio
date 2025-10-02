@@ -1,54 +1,120 @@
 ---
-import clsx from 'clsx';
-import LinkedinIcon from '../icons/Linkedin.astro';
-import GithubIcon from '../icons/Github.astro';
+import clsx from "clsx";
+import LinkedinIcon from "../icons/Linkedin.astro";
+import GithubIcon from "../icons/Github.astro";
 
-import SunIcon from '../icons/Sun.astro';
+import SunIcon from "../icons/Sun.astro";
 
 const link = clsx(
-  'text-slate-300',
-  'hover:text-purple-500',
-  'ease-in-out',
-  'transition',
-  'duration-200',
-  'whitespace-nowrap'
+  "text-slate-300",
+  "hover:text-purple-500",
+  "ease-in-out",
+  "transition",
+  "duration-200",
+  "whitespace-nowrap",
 );
 
 const icon = clsx(
-  'size-5',
-  'mx-1',
-  'hover:text-cyan-400',
-  'text-slate-400',
-  'ease-in-out',
-  'transition',
+  "size-5",
+  "mx-1",
+  "hover:text-cyan-400",
+  "text-slate-400",
+  "ease-in-out",
+  "transition",
 );
 ---
-<header class="flex fixed top-0 bg-gray-950/90 w-full [mask-image:linear-gradient(to_bottom,black_86%,transparent)] [mask-repeat:no-repeat] [mask-size:100%_100%] z-10 backdrop-blur-md items-center py-4 text-base">
+
+<header
+  class="flex fixed top-0 bg-gray-950/90 w-full z-10 backdrop-blur-md items-center py-4 text-base"
+>
+  <!-- Logo -->
   <div class="flex flex-1 ml-20">
-    <img
-      class="rounded-full h-12 w-12"
-      src="/me.png"
-      alt="Logo"
-    />
-    
+    <img class="rounded-full h-12 w-12" src="/me.png" alt="Logo" />
   </div>
-  <nav class="flex gap-x-6 opacity-95 flex-1 justify-center ">
+
+  <!-- Menú desktop -->
+  <nav id="menu-desktop" class="hidden md:flex gap-x-6 opacity-95 flex-1 justify-center">
     <a class={link} href="#top">Inicio</a>
     <a class={link} href="#experience">Experiencia</a>
     <a class={link} href="#proyect">Proyectos</a>
     <a class={link} href="#about">Sobre mi</a>
     <a class={link} href="#contact">Contacto</a>
   </nav>
-  <nav class="flex gap-x-2 flex-1 justify-end mr-20">
-    <a href="https://www.linkedin.com/in/sammendez115/" target="_blank" rel="noopener noreferrer">
+
+  <!-- Botón hamburguesa -->
+  <div class="md:hidden mr-12">
+    <button
+      id="menu-btn"
+      class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700"
+    >
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Iconos -->
+  <nav id="icons" class="hidden md:flex gap-x-2 flex-1 justify-end mr-20">
+    <a href="https://www.linkedin.com/in/sammendez115/" target="_blank">
       <LinkedinIcon class={icon} />
     </a>
-    <a href="https://github.com/5ammys" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/5ammys" target="_blank">
       <GithubIcon class={icon} />
     </a>
-    <!--div>
-      <SunIcon class={icon} /> ACA DEBE IMPLEMENTARSE LA FUNC NIGHT-LIGHT
-    </div-->
   </nav>
-
 </header>
+
+<!-- Menú móvil desplegable -->
+<div
+  id="menu"
+  class="hidden fixed inset-0 z-[9999] bg-black/80 flex flex-col items-center justify-center space-y-6 text-white text-2xl"
+>
+  <a href="#top" class="hover:text-purple-400">Inicio</a>
+  <a href="#experience" class="hover:text-purple-400">Experiencia</a>
+  <a href="#proyect" class="hover:text-purple-400">Proyectos</a>
+  <a href="#about" class="hover:text-purple-400">Sobre mí</a>
+  <a href="#contact" class="hover:text-purple-400">Contacto</a>
+
+  <!-- Botón cerrar -->
+  <a
+    id="close-btn"
+    class=" bg-purple-600 rounded-lg hover:bg-purple-500"
+  >
+    Cerrar
+</a>
+</div>
+
+<script is:inline>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("menu");
+  const closeBtn = document.getElementById("close-btn");
+  const desk = document.getElementById("menu-desktop");
+  const icons = document.getElementById("icons");
+
+  if (btn && menu && closeBtn) {
+    btn.addEventListener("click", () => {
+      menu.classList.remove("hidden");
+    });
+    closeBtn.addEventListener("click", () => {
+      menu.classList.add("hidden");
+    });
+  }
+
+  function checkWidth() {
+    if (window.innerWidth < 768 ) {
+      desk.style.display = "none";
+      icons.style.display = "none";
+    } else {
+      desk.style.display = "flex";
+      icons.style.display = "flex";
+    }
+  }
+
+  checkWidth();
+  window.addEventListener("resize", checkWidth);
+</script>
