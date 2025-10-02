@@ -2,6 +2,7 @@
 import clsx from "clsx";
 import LinkedinIcon from "../icons/Linkedin.astro";
 import GithubIcon from "../icons/Github.astro";
+import Cross from "../icons/Cross.astro";
 
 import SunIcon from "../icons/Sun.astro";
 
@@ -72,7 +73,7 @@ const icon = clsx(
 <!-- Menú móvil desplegable -->
 <div
   id="menu"
-  class="hidden fixed inset-0 z-[9999] bg-black/80 flex flex-col items-center justify-center space-y-6 text-white text-2xl"
+  class="hidden fixed inset-0 z-[9999] bg-black/80 flex-col items-center justify-center space-y-6 text-white text-2xl"
 >
   <a href="#top" class="hover:text-purple-400">Inicio</a>
   <a href="#experience" class="hover:text-purple-400">Experiencia</a>
@@ -83,38 +84,48 @@ const icon = clsx(
   <!-- Botón cerrar -->
   <a
     id="close-btn"
-    class=" bg-purple-600 rounded-lg hover:bg-purple-500"
+    class="absolute left-[80%] top-8"
   >
-    Cerrar
-</a>
+    <Cross class="size-6"/>
+  </a>
 </div>
 
 <script is:inline>
-  const btn = document.getElementById("menu-btn");
-  const menu = document.getElementById("menu");
-  const closeBtn = document.getElementById("close-btn");
-  const desk = document.getElementById("menu-desktop");
-  const icons = document.getElementById("icons");
+ const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("menu");
+const closeBtn = document.getElementById("close-btn");
+const desk = document.getElementById("menu-desktop");
+const icons = document.getElementById("icons");
 
-  if (btn && menu && closeBtn) {
-    btn.addEventListener("click", () => {
-      menu.classList.remove("hidden");
-    });
-    closeBtn.addEventListener("click", () => {
+if (btn && menu && closeBtn) {
+  btn.addEventListener("click", () => {
+    menu.classList.remove("hidden");
+    menu.classList.add("flex");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    menu.classList.add("hidden");
+    menu.classList.remove("flex");
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
       menu.classList.add("hidden");
+      menu.classList.remove("flex");
     });
-  }
+  });
+}
 
-  function checkWidth() {
-    if (window.innerWidth < 768 ) {
-      desk.style.display = "none";
-      icons.style.display = "none";
-    } else {
-      desk.style.display = "flex";
-      icons.style.display = "flex";
-    }
+function checkWidth() {
+  if (window.innerWidth < 768) {
+    desk.style.display = "none";
+    icons.style.display = "none";
+  } else {
+    desk.style.display = "flex";
+    icons.style.display = "flex";
   }
+}
 
-  checkWidth();
-  window.addEventListener("resize", checkWidth);
+checkWidth();
+window.addEventListener("resize", checkWidth);
 </script>
