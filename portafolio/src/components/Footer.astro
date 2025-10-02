@@ -17,7 +17,7 @@ const { title = "Contacto", id } = Astro.props;
 
     <!-- Columna izquierda -->
     <div>
-      <p>
+      <p class="mr-8">
         Puedes escribirme directamente a mi correo electrónico, enviarme un mensaje a mi número de teléfono 
         o completar el formulario de contacto. Estaré encantado de responder a tus consultas lo antes posible.
       </p>
@@ -25,18 +25,18 @@ const { title = "Contacto", id } = Astro.props;
       <!-- Botones de acción -->
       <h3 class="my-5">Mis redes:</h3>
 
-      <div class="ml-4 flex gap-3">
-        <a href="https://linkedin.com/in/tuusuario" target="_blank" 
+      <div class="ml-4 flex flex-wrap gap-3">
+        <a href="https://linkedin.com/in/sammendez115" target="_blank" 
            class="px-5 py-2 rounded-full flex flex-row text-sm bg-sky-500 hover:bg-sky-600 transition">
-           <Linkedin class="size-4 mx-1" /> LinkedIn
+           <Linkedin class="size-5 mx-1" /> LinkedIn
         </a>
-        <a href="https://github.com/tuusuario" target="_blank" 
+        <a href="https://github.com/5ammys" target="_blank" 
            class="px-5 py-2 rounded-full flex flex-row text-sm bg-gray-700 hover:bg-gray-800 transition">
-           <Github class="size-4 mx-1" /> GitHub
+           <Github class="size-5 mx-1" /> GitHub
         </a>
         <a href="https://wa.me/5491164561145" target="_blank" 
            class="px-5 py-2 rounded-full flex flex-row whitespace-nowrap text-sm bg-emerald-600 hover:bg-emerald-700 transition">
-           <WhatsApp class="size-4 mx-1" /> WhatsApp
+           <WhatsApp class="size-5 mx-1" /> WhatsApp
         </a>
       </div>
 
@@ -46,7 +46,7 @@ const { title = "Contacto", id } = Astro.props;
       </div>
     </div>
 
-    <!-- Columna derecha (formulario) -->
+    
     <form
       id="form"
       action="https://formspree.io/f/xpwywrov"
